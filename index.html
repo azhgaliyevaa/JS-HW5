@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// Task 1
+
+function ucFirst(str) {
+    const firstLetter = str.charAt(0).toUpperCase();
+    const result = firstLetter + str.slice(1);
+    console.log(result);
+}
+ucFirst("hello");
+
+// Task 2
+
+function checkSpam(str) {
+    const badWords = ["badword", "xxx"];
+
+    for (word of badWords) {
+    if (str.toLowerCase().includes(word)) {
+        console.log(true);
+    break;
+    }
+    }
+}
+
+checkSpam("BADWORD");
+
+
+// Task 3
+
+function reverseString(str) {
+    let newString = " ";
+    for(let i = str.length - 1; i >= 0; i--) {
+    newString += str[i];
+    }
+    console.log(newString);
+}
+
+reverseString("123");
+
+// Task 4
+
+let stations = [
+
+'MAN675847583748sjt567654;Manchester Piccadilly',
+'GNF576746573fhdg4737dh4;Greenfield',
+'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+'SYB4f65hf75f736463;Stalybridge',
+'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'
+];
+
+// MAN: Manchester Piccadilly
+
+for(station of stations) {
+    const firstLetters = station.slice(0, 3);
+    const stationName = station.slice(station.indexOf(";") +1 );
+    console.log(firstLetters + ":" + stationName);
+}
+
+// Task 5
+
+let strings = [
+    "кришна", 
+    "кришна", 
+    "харе", 
+    "харе", 
+    "харе", 
+    "харе", 
+    "кришна", 
+    "кришна", 
+    ":-O"
+];
+
+function unique(strings) {
+    let uniqueStrings = []; 
+for (word of strings) {
+   if(!uniqueStrings.includes(word)){
+    uniqueStrings.push(word) ;
+   } 
+}
+return uniqueStrings;
+}
+
+console.log(unique(strings) );
+//  должен вывести "кришна, харе, :-O"
+    </script>
+</body>
+</html>
